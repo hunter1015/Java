@@ -1,8 +1,8 @@
 package com.designpattern;
 
 
-// ¿ª·¢Ò»¿î¡¶ÍõÕßÈÙÒ«¡·£¬Ö§³Ö¶à²Ù×÷ÏµÍ³ºÍ¶à¿ØÖÆ·½Ê½²Ù×÷¿ØÖÆºÍ½çÃæ¿ØÖÆ£¬²¢Ìá¹©ÏàÓ¦µÄ¹¤³§ÀàÀ´·â×°ÕâĞ©ÀàµÄ³õÊ¼»¯¹ı³Ì
-//´´½¨²»Í¬µÄ²Ù×÷ÏµÍ³½Ó¿Ú
+// å¼€å‘ä¸€æ¬¾ã€Šç‹è€…è£è€€ã€‹ï¼Œæ”¯æŒå¤šæ“ä½œç³»ç»Ÿå’Œå¤šæ§åˆ¶æ–¹å¼æ“ä½œæ§åˆ¶å’Œç•Œé¢æ§åˆ¶ï¼Œå¹¶æä¾›ç›¸åº”çš„å·¥å‚ç±»æ¥å°è£…è¿™äº›ç±»çš„åˆå§‹åŒ–è¿‡ç¨‹
+//åˆ›å»ºä¸åŒçš„æ“ä½œç³»ç»Ÿæ¥å£
 interface Linux{
 	void controller();
 }
@@ -11,24 +11,24 @@ interface Windows{
 }
 
 
-//»ùÓÚ²»Í¬²Ù×÷ÏµÍ³ÊµÏÖ¿ØÖÆÂß¼­
+//åŸºäºä¸åŒæ“ä½œç³»ç»Ÿå®ç°æ§åˆ¶é€»è¾‘
 class LinuxController implements Linux {
     @Override
     public void controller() {
-        System.out.println("Linux ¿ØÖÆ ¡¶ÍõÕßÈÙÒ«¡·");
+        System.out.println("Linux æ§åˆ¶ ã€Šç‹è€…è£è€€ã€‹");
     }
 }
 
 class WindowsController implements Windows {
     @Override
     public void controller() {
-        System.out.println("Windows ¿ØÖÆ ¡¶ÍõÕßÈÙÒ«¡·");
+        System.out.println("Windows æ§åˆ¶ ã€Šç‹è€…è£è€€ã€‹");
     }
 }
 
 
 
-//´´½¨Ò»¸ö¹¤³§Àà£¬»ùÓÚ½Ó¿Ú·Ö±ğÊµÏÖ²Ù×÷¿ØÖÆºÍ½çÃæ¿ØÖÆÁ½ÖÖ·½Ê½µÄ¹¤³§
+//åˆ›å»ºä¸€ä¸ªå·¥å‚ç±»ï¼ŒåŸºäºæ¥å£åˆ†åˆ«å®ç°æ“ä½œæ§åˆ¶å’Œç•Œé¢æ§åˆ¶ä¸¤ç§æ–¹å¼çš„å·¥å‚
 
 
 interface AbstractFactory {
@@ -41,13 +41,13 @@ class OperationFactory implements AbstractFactory {
 
     @Override
     public Linux installLinux() {
-        System.out.println("°²×°Linux²Ù×÷¿ØÖÆÏµÍ³");
+        System.out.println("å®‰è£…Linuxæ“ä½œæ§åˆ¶ç³»ç»Ÿ");
         return new LinuxController();
     }
 
     @Override
     public Windows installWindows() {
-        System.out.println("°²×°Windows²Ù×÷¿ØÖÆÏµÍ³");
+        System.out.println("å®‰è£…Windowsæ“ä½œæ§åˆ¶ç³»ç»Ÿ");
         return new WindowsController();
     }
 }
@@ -55,13 +55,13 @@ class OperationFactory implements AbstractFactory {
 class InterfaceFactory implements AbstractFactory {
     @Override
     public Linux installLinux() {
-        System.out.println("°²×°Linux½çÃæ¿ØÖÆÏµÍ³");
+        System.out.println("å®‰è£…Linuxç•Œé¢æ§åˆ¶ç³»ç»Ÿ");
         return new LinuxController();
     }
 
     @Override
     public Windows installWindows() {
-        System.out.println("°²×°Windows½çÃæ¿ØÖÆÏµÍ³");
+        System.out.println("å®‰è£…Windowsç•Œé¢æ§åˆ¶ç³»ç»Ÿ");
         return new WindowsController();
     }
 }

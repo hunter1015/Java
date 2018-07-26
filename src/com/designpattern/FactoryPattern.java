@@ -1,7 +1,7 @@
 package com.designpattern;
 
 
-//1.ĞÂÔöImageReaderFactory³éÏó¹¤³§½Ó¿Ú,ÓÃÀ´¹¹½¨¾ßÌåµÄ¶ÔÏó
+//1.æ–°å¢ImageReaderFactoryæŠ½è±¡å·¥å‚æ¥å£,ç”¨æ¥æ„å»ºå…·ä½“çš„å¯¹è±¡
 interface ImageReader{
 	void read();
 }
@@ -9,33 +9,33 @@ interface ImageReaderFactory{
 	ImageReader create();
 }
 
-//Ïà±Èµ¥Ò»ÊµÀı»¯µÄ¼òµ¥¹¤³§Ä£Ê½¶øÑÔ£¬·½·¨¹¤³§Ä£Ê½¸ü¼ÓµÄÁé»î£¬Õë¶Ô²»Í¬µÄ²úÆ·£¨Í¼Æ¬¶ÁÈ¡Æ÷£©Ìá¹©²»Í¬µÄ¹¤³§¡£
+//ç›¸æ¯”å•ä¸€å®ä¾‹åŒ–çš„ç®€å•å·¥å‚æ¨¡å¼è€Œè¨€ï¼Œæ–¹æ³•å·¥å‚æ¨¡å¼æ›´åŠ çš„çµæ´»ï¼Œé’ˆå¯¹ä¸åŒçš„äº§å“ï¼ˆå›¾ç‰‡è¯»å–å™¨ï¼‰æä¾›ä¸åŒçš„å·¥å‚ã€‚
 class JpgReader implements ImageReader {
     public JpgReader() {
-        System.out.println("´´½¨Jpg¶ÁÈ¡Æ÷");
+        System.out.println("åˆ›å»ºJpgè¯»å–å™¨");
     }
 
     @Override
     public void read() {
-        System.out.println("¶ÁÈ¡JpgÎÄ¼ş");
+        System.out.println("è¯»å–Jpgæ–‡ä»¶");
     }
 }
 
 class PngReader implements ImageReader {
     public PngReader() {
-        System.out.println("´´½¨Png¶ÁÈ¡Æ÷");
+        System.out.println("åˆ›å»ºPngè¯»å–å™¨");
     }
 
     @Override
     public void read() {
-        System.out.println("¶ÁÈ¡PngÎÄ¼ş");
+        System.out.println("è¯»å–Pngæ–‡ä»¶");
     }
 }
 
 class JpgFactory implements ImageReaderFactory {
     @Override
     public ImageReader create() {
-        System.out.println("ÊµÀı»¯JpgÎÄ¼ş¹¤³§");
+        System.out.println("å®ä¾‹åŒ–Jpgæ–‡ä»¶å·¥å‚");
         return new JpgReader();
     }
 }
@@ -43,14 +43,14 @@ class JpgFactory implements ImageReaderFactory {
 class PngFactory implements ImageReaderFactory {
     @Override
     public ImageReader create() {
-        System.out.println("ÊµÀı»¯PngÎÄ¼ş¹¤³§");
+        System.out.println("å®ä¾‹åŒ–Pngæ–‡ä»¶å·¥å‚");
         return new PngReader();
     }
 }
 
 
 
-//´´½¨²âÊÔÀà£¬µ±È»Êµ¼ÊÊ¹ÓÃ¹ı³ÌÖĞ£¬ÊµÏÖ¹¤³§·½·¨³ıÁË¿ÉÒÔÊµÀı»¯¾ßÌå¶ÔÏó£¬»¹¿ÉÒÔ³õÊ¼»¯Ä³Ğ©×ÊÔ´ÅäÖÃ£¬±ÈÈçÁ¬½Ó³Ø¡¢´´½¨ÎÄ¼şµÈ
+//åˆ›å»ºæµ‹è¯•ç±»ï¼Œå½“ç„¶å®é™…ä½¿ç”¨è¿‡ç¨‹ä¸­ï¼Œå®ç°å·¥å‚æ–¹æ³•é™¤äº†å¯ä»¥å®ä¾‹åŒ–å…·ä½“å¯¹è±¡ï¼Œè¿˜å¯ä»¥åˆå§‹åŒ–æŸäº›èµ„æºé…ç½®ï¼Œæ¯”å¦‚è¿æ¥æ± ã€åˆ›å»ºæ–‡ä»¶ç­‰
 public class FactoryPattern {
 
 	public static void main(String[] args) {
