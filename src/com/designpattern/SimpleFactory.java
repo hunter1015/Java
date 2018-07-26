@@ -8,6 +8,7 @@ package com.designpattern;
 	使用场景： 创建简单，无复杂业务逻辑的对象
 	
 	工厂方法根据传入参数，return不同形状接口的实现类，圆或者方形
+	问题是，所有对象实例化都需要这个工厂类，太累了！耦合度太高
  */
 interface Shape {
 	void draw();
